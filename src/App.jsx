@@ -10,7 +10,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/gh-react-vite/" element={<Login />} />
+      <Route path="/gh-react-vite/" element={<Login />} /> 
     </Routes>
 
   )
