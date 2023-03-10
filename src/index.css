@@ -16,6 +16,7 @@
   --emerald-green: #133631;
   --brown: #C9AB81;
   --light-brown: #D4BFA2;
+  --gray: #F3F3F3;
   --white: #FFFFFF; 
   --black: #000000;
   --font-gray: #2D2A27; 
@@ -30,6 +31,7 @@ body {
   height: 100vh;
   font-family: var(--font-base);
   font-size: 100%;
+  background-color: var(--gray);
   /*overflow-x: hidden;*/
 }
 
