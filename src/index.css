@@ -33,12 +33,11 @@ body {
   /*overflow-x: hidden;*/
 }
 
-
 #root{
   width: 100vw;
   height: 100vh; 
   display: flex;
-  align-content: center;
+  align-content: stretch;
   flex-wrap: wrap;
 }
 
@@ -49,7 +48,18 @@ body {
 .show {
   display: flex !important;
 } */
+header {
+  height: 17vh;
+  width: 100vw;
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.logo-header {
+  height: 50%;
+}
 
 .login-container {
   height: 42vh; 

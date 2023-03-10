@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 // Import axios to make HTTP requests
 import axios from "axios";
+import Header from "./Header";
 
 
 // Define Login component
@@ -38,7 +39,7 @@ const Login = () => {
         setError("");
 
         // Email validation
-        if(!credentials.email){
+        if (!credentials.email) {
             setError("Empty field");
             return;
         }
@@ -50,7 +51,7 @@ const Login = () => {
         }
 
         // Password validation
-        if(!credentials.password){
+        if (!credentials.password) {
             setError("Empty field");
             return;
         }
@@ -100,28 +101,31 @@ const Login = () => {
     };
 
     return (
-        <section className="login-container">
-            <h1>WELCOME</h1>
-            <form className="principal-form" onSubmit={handleSubmit} noValidate>
-                <div className="form-group">
-                    <input type="email" id="email" name="email" value={credentials.email} placeholder="email address" onChange={handleInputChange} required />
-                    {error && error.includes("Empty field") && <div className="error-message">Please enter your email address</div>}
-                    {error && error.includes("Invalid email") && <div className="error-message">Invalid email</div>}
-                    {error && error.includes("Email doesn't exist") && <div className="error-message">Email doesn't exist. Please try again</div>}
-                </div>
-                <div className="form-group">
-                    <input type="password" id="password" name="password" value={credentials.password} placeholder="password" onChange={handleInputChange} required />
-                    {error && error.includes("Empty field") && <div className="error-message">Please enter your password</div>}
-                    {error && error.includes("Invalid password") && <div className="error-message">Password must be at least 8 characters</div>}
-                    {error && error.includes("Incorrect password") && <div className="error-message">Password is incorrect. Please try again</div>}
-                </div>
-                <div className="form-group">
-                    <button className="submit-btn" type="submit" disabled={loading}>
-                        {loading ? "Logging in..." : "LOGIN"}
-                    </button>
-                </div>
-            </form>
-        </section>
+        <>
+            <Header />
+            <section className="login-container">
+                <h1>WELCOME</h1>
+                <form className="principal-form" onSubmit={handleSubmit} noValidate>
+                    <div className="form-group">
+                        <input type="email" id="email" name="email" value={credentials.email} placeholder="email address" onChange={handleInputChange} required />
+                        {error && error.includes("Empty field") && <div className="error-message">Please enter your email address</div>}
+                        {error && error.includes("Invalid email") && <div className="error-message">Invalid email</div>}
+                        {error && error.includes("Email doesn't exist") && <div className="error-message">Email doesn't exist. Please try again</div>}
+                    </div>
+                    <div className="form-group">
+                        <input type="password" id="password" name="password" value={credentials.password} placeholder="password" onChange={handleInputChange} required />
+                        {error && error.includes("Empty field") && <div className="error-message">Please enter your password</div>}
+                        {error && error.includes("Invalid password") && <div className="error-message">Password must be at least 8 characters</div>}
+                        {error && error.includes("Incorrect password") && <div className="error-message">Password is incorrect. Please try again</div>}
+                    </div>
+                    <div className="form-group">
+                        <button className="submit-btn" type="submit" disabled={loading}>
+                            {loading ? "Logging in..." : "LOGIN"}
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </>
     );
 };
 
