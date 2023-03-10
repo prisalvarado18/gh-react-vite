@@ -42,9 +42,18 @@ body {
   flex-wrap: wrap;
 }
 
+/* .hide {
+  display: none !important;
+}
+
+.show {
+  display: flex !important;
+} */
+
+
 .login-container {
-  height: 50%; 
-  width: 41%; 
+  height: 42vh; 
+  width: 42vw; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,15 +63,16 @@ body {
   /* padding: 10px 100px 10px 100px;  */
   background-color: var(--brown);
   border: 1px solid #ccc;
-  border-radius: 2rem;
+  border-radius: 1.9rem;
 }
 
 h1 {
-  height: 20%;
+  height: 25%;
   display: flex;
   align-items: flex-end;
   font-weight: bolder;
-  font-size: 2rem;
+  font-size: 1.7rem;
+  margin-bottom: 2%;
 }
 
 .principal-form {
@@ -72,14 +82,36 @@ h1 {
 }
 
 .form-group {
-  height: 31%;
+  height: 30%;
+  position: relative;
   display: flex;
   /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   /* margin-bottom: 10%; */
   /* width: 100%; */
+  flex-wrap: wrap;
+  align-content: stretch;
+  /* margin-top: 2%; */
 }
+
+
+/* .error-message {
+  height: 15%;
+  color: white;
+  font-size: 14px;
+  margin-top: 5px;
+} */
+.error-message {
+  position: absolute;
+  top: 80%; 
+  /* left: 0; */
+  /* height: 15%; */
+  font-size: 12px;
+  color: white;
+  /* margin-top: 5px; */
+}
+
 
 /* label {
   margin-bottom: 5px;
@@ -89,14 +121,14 @@ input {
   /* padding: 5px; */
   /* border: 1px solid #ccc; */
   width: 64%;
-  border-radius: 5px;
-  font-size: 1.2rem;
+  height: 50%;
+  border-radius: 4px 4px 0  0;
+  /* font-size: 1rem; */
   border: 0;
   outline: 0;
   border-bottom: 2px solid var(--black);
-  height: 45%;
   font-family: var(--font-secondary);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding: 5px 10px;
   font-weight: bold;
   background-color: var(--light-brown);
@@ -114,20 +146,20 @@ input:focus {
 }
 
 .submit-btn {
-  height: 76%; 
-  background-color: var(--font-black);
-  width: 48%;
-  color: #fff;
+  height: 89%; 
+  width: 46%;
   padding: 10px 20px;
   border: none;
-  border-radius: 3px;
-  font-size: 1.5rem;
+  border-radius: 4px;
+  background-color: var(--font-black);
+  font-family: var(--font-base);
+  font-size: 1.6rem;
+  color: #fff;
   cursor: pointer;
   align-self: flex-end;
-  font-family: var(--font-base);
-  margin-bottom: 2%;
-  font-size: 2rem;
-  /* margin-top: 4%; */
+  /* margin-bottom: 2%; */
+  
+  /* margin-top: 0%; */
 }
 
 .submit-btn:hover {

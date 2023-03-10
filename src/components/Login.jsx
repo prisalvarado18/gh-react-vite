@@ -21,7 +21,6 @@ const Login = () => {
     // The setLoading function will be used to update the state later
     const [loading, setLoading] = useState(false);
 
-
     // Define a function that updates the credentials state whenever the user enters sth
     // in the email or password fields
     const handleInputChange = (event) => {
@@ -37,7 +36,39 @@ const Login = () => {
         event.preventDefault();
         // Set the error state and loading to initial values
         setError("");
+
+        // Email validation
+        if(!credentials.email){
+            setError("Empty field");
+            return;
+        }
+
+        if (!/\S+@\S+\.\S+/.test(credentials.email)) {
+            console.log('emaaaaaaaail')
+            setError("Invalid email");
+            return;
+        }
+
+        // Password validation
+        if(!credentials.password){
+            setError("Empty field");
+            return;
+        }
+
+        if (credentials.password.length < 8) {
+            console.log('passsssssssword')
+            setError("Invalid password");
+            return;
+        }
+
         setLoading(true);
+
+        // if (!validateFields()) {
+        //     setLoading(false);
+        //     return;
+        // }
+
+
 
         try {
             // Use the axios module to send a POST request to the API, with the values of the "credentials" state.
@@ -48,22 +79,41 @@ const Login = () => {
         } catch (error) {
             // Otherwise, set the error state with a custom error message
             console.error(error);
-            setError("Invalid credentials. Please try again");
+            setError("Invalid credentials");
+
+            if (error.response) {
+                if (error.response.status === 400) {
+                    console.log(error.response.status)
+                    setError('Empty field');
+                }
+                else if (error.response.status === 401) {
+                    console.log(error.response.status)
+                    setError('Incorrect password');
+                }
+                else if (error.response.status === 404) {
+                    console.log(error.response.status)
+                    setError("Email doesn't exist");
+                }
+            }
         }
-        // Finally, the loading state is set to false
         setLoading(false);
     };
 
     return (
         <section className="login-container">
             <h1>WELCOME</h1>
-            {error && <div>{error}</div>}
-            <form className="principal-form" onSubmit={handleSubmit}>
+            <form className="principal-form" onSubmit={handleSubmit} noValidate>
                 <div className="form-group">
                     <input type="email" id="email" name="email" value={credentials.email} placeholder="email address" onChange={handleInputChange} required />
+                    {error && error.includes("Empty field") && <div className="error-message">Please enter your email address</div>}
+                    {error && error.includes("Invalid email") && <div className="error-message">Invalid email</div>}
+                    {error && error.includes("Email doesn't exist") && <div className="error-message">Email doesn't exist. Please try again</div>}
                 </div>
                 <div className="form-group">
                     <input type="password" id="password" name="password" value={credentials.password} placeholder="password" onChange={handleInputChange} required />
+                    {error && error.includes("Empty field") && <div className="error-message">Please enter your password</div>}
+                    {error && error.includes("Invalid password") && <div className="error-message">Password must be at least 8 characters</div>}
+                    {error && error.includes("Incorrect password") && <div className="error-message">Password is incorrect. Please try again</div>}
                 </div>
                 <div className="form-group">
                     <button className="submit-btn" type="submit" disabled={loading}>
@@ -79,4 +129,7 @@ export default Login;
 
 
 /*<label htmlFor="email">Email:</label>
-<label htmlFor="password">Password:</label>*/
+<label htmlFor="password">Password:</label>
+{error && <div>{error}</div>}
+ {error && <div className="error-message">{error}</div>}
+*/
