@@ -3,6 +3,8 @@ import React, { useState } from "react";
 // Import axios to make HTTP requests
 import axios from "axios";
 import Header from "./Header";
+import jwt from 'jwt-decode';
+import { useNavigate } from 'react-router';
 
 
 // Define Login component
@@ -31,6 +33,7 @@ const Login = () => {
         setCredentials({ ...credentials, [name]: value });
     };
 
+    const navigate = useNavigate();
     // Define a function to submit the login form
     const handleSubmit = async (event) => {
         // Use 'event' to prevent the form from auto-submitting
@@ -73,10 +76,26 @@ const Login = () => {
 
         try {
             // Use the axios module to send a POST request to the API, with the values of the "credentials" state.
-            const response = await axios.post("https://palvaradoristorante.onrender.com/auth", credentials);
-            // If the request is successful, the function saves the response in a variable called 'response'
-            console.log(response);
-            // The token or any other information could be saved in the app's global state or in localStorage
+            const response = await axios.post("https://palvaradoristorante.onrender.com/auth", credentials)
+                // If the request is successful, the function saves the response in a variable called 'response'
+                .then((response) => {
+                    console.log(response);
+                    const token = response.data.token;
+                    const user = jwt(token);
+                    const userId = user.id;
+                    localStorage.setItem('userId', userId)
+                    if (response.status === 200) {
+                        localStorage.setItem('token', token);
+                        // console.log("This is the token: " + response.data.token);
+                        // console.log("This is the status: " + response.status);
+                        // console.log("This is the email:" + JSON.parse(response.config.data)["email"]);
+                        // console.log("This is the user data:" + user[Object.keys(user)[0]])
+                        // console.log(response.data.data.admin)
+                        response.data.data.admin === true ? navigate("/gh-react-vite/users") : navigate("/gh-react-vite/")
+                        //navigate('/gh-react-vite/users', {replace: true});
+
+                    }
+                });
         } catch (error) {
             // Otherwise, set the error state with a custom error message
             console.error(error);

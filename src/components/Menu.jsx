@@ -8,6 +8,7 @@ const Menu = () => {
 
   const onLogoutClick = () => {
     navigate("/gh-react-vite/");
+    localStorage.clear();
   };
 
   const [isOpen, setIsOpen] = useState(false);
