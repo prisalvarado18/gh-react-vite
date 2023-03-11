@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // Import axios to make HTTP requests
 import axios from "axios";
 import Header from "./Header";
+import jwt from 'jwt-decode';
 
 
 // Define Login component
@@ -73,9 +74,20 @@ const Login = () => {
 
         try {
             // Use the axios module to send a POST request to the API, with the values of the "credentials" state.
-            const response = await axios.post("https://palvaradoristorante.onrender.com/auth", credentials);
-            // If the request is successful, the function saves the response in a variable called 'response'
-            console.log(response);
+            const response = await axios.post("https://palvaradoristorante.onrender.com/auth", credentials)
+                // If the request is successful, the function saves the response in a variable called 'response'
+                .then((response) => {
+                    console.log(response);
+                    const token = response.data.token;
+                    const user = jwt(token);
+                    const userId = user.id;
+                    localStorage.setItem('userId', userId)
+                    if (response.status === 200) {
+                        localStorage.setItem('token', token);
+                        history.push('/users')
+
+                    }
+                })
             // The token or any other information could be saved in the app's global state or in localStorage
         } catch (error) {
             // Otherwise, set the error state with a custom error message
