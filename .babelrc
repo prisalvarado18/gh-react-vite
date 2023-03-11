@@ -4,6 +4,7 @@
         "@babel/preset-env"
     ],
     "plugins": [
-        "@babel/plugin-syntax-jsx"
+        "@babel/plugin-syntax-jsx",
+        "react-html-attrs"
     ]
 }
