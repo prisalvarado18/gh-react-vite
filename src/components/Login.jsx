@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Header from "./Header";
 import jwt from 'jwt-decode';
+import { useNavigate } from 'react-router';
 
 
 // Define Login component
@@ -32,6 +33,7 @@ const Login = () => {
         setCredentials({ ...credentials, [name]: value });
     };
 
+    const navigate = useNavigate();
     // Define a function to submit the login form
     const handleSubmit = async (event) => {
         // Use 'event' to prevent the form from auto-submitting
@@ -84,11 +86,16 @@ const Login = () => {
                     localStorage.setItem('userId', userId)
                     if (response.status === 200) {
                         localStorage.setItem('token', token);
-                        history.push('/users')
+                        // console.log("This is the token: " + response.data.token);
+                        // console.log("This is the status: " + response.status);
+                        // console.log("This is the email:" + JSON.parse(response.config.data)["email"]);
+                        // console.log("This is the user data:" + user[Object.keys(user)[0]])
+                        // console.log(response.data.data.admin)
+                        response.data.data.admin === true ? navigate("/gh-react-vite/users") : navigate("/gh-react-vite/")
+                        //navigate('/gh-react-vite/users', {replace: true});
 
                     }
-                })
-            // The token or any other information could be saved in the app's global state or in localStorage
+                });
         } catch (error) {
             // Otherwise, set the error state with a custom error message
             console.error(error);
