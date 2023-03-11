@@ -91,7 +91,7 @@ const Login = () => {
                         // console.log("This is the email:" + JSON.parse(response.config.data)["email"]);
                         // console.log("This is the user data:" + user[Object.keys(user)[0]])
                         // console.log(response.data.data.admin)
-                        response.data.data.admin === true ? navigate("/gh-react-vite/users") : navigate("/gh-react-vite/")
+                        response.data.data.admin === true ? navigate("/gh-react-vite/users") : navigate("/gh-react-vite/orders")
                         //navigate('/gh-react-vite/users', {replace: true});
 
                     }
