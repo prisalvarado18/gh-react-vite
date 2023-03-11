@@ -59,6 +59,30 @@ header {
   align-items: center;
 }
 
+li {
+  list-style: none;
+}
+
+nav li a {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 23px;
+}
+
+div p {
+  font-size: 20px;
+}
+
+a:hover{
+  border-bottom: 3px solid  #F3C13F;
+}
+
 .logo-header {
   height: 50%;
 }
