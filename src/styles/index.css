@@ -17,9 +17,9 @@
   --brown: #C9AB81;
   --light-brown: #D4BFA2;
   --gray: #F3F3F3;
-  --white: #FFFFFF; 
+  --white: #FFFFFF;
   --black: #000000;
-  --font-gray: #2D2A27; 
+  --font-gray: #2D2A27;
   --font-black: #000000;
   --font-base: 'Montserrat', sans-serif;
   --font-secondary: 'Poiret One', cursive;
@@ -31,33 +31,38 @@ body {
   height: 100vh;
   font-family: var(--font-base);
   font-size: 100%;
-  background-color: var(--gray);
-  /*overflow-x: hidden;*/
+  /*background-color: var(--gray);*/
 }
 
-#root{
+#root {
   width: 100vw;
-  height: 100vh; 
+  height: 100vh;
   display: flex;
   align-content: stretch;
   flex-wrap: wrap;
 }
 
-/* .hide {
-  display: none !important;
+header {
+  position: absolute;
+  height: 17vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: #f5f5f5;*/
+  padding: 9px 20px;
+  /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
 }
 
-.show {
-  display: flex !important;
-} */
-header {
+
+/*header {
   height: 17vh;
   width: 100vw;
   background-color: var(--black);
   display: flex;
   justify-content: center;
   align-items: center;
-}
+}*/
 
 li {
   list-style: none;
@@ -79,24 +84,203 @@ div p {
   font-size: 20px;
 }
 
+a:hover {
+  border-bottom: 3px solid #F3C13F;
+}
+
+.logo-header {
+  height: 50%;
+  margin-bottom: 1.5%;
+}
+
+.login-body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../assets/bg-main.png);
+  background-size: 100% auto;
+  background-position: center;
+  align-items: center;
+}
+
+.login-container {
+  position: relative;
+  height: 35vh;
+  width: 42vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  /*background-color: var(--brown);*/
+  border: 0px solid var(--black);
+  /*border-radius: 1.9rem;*/
+}
+
+/*.square {
+  position: absolute;
+  background-color: red;
+  height: 100%;
+  border: solid;
+  width: 50%;
+  z-index: 3;
+}*/
+
+.login-container:before {
+  content:"";
+  position:absolute;
+  inset:0px 105px 0px 105px;
+  border:3px solid #0000;
+  border-image:linear-gradient(0deg,black 30%,#0000 0 80%,black 0) 1;
+}
+
+/* .square:after {
+  inset:-50px;
+  border-image:linear-gradient(-45deg,green 20%,#0000 0 80%,green 0) 10;
+} */
+
+
+.login-body .login-container h1 {
+  height: 22%;
+  display: flex;
+  align-items: flex-end;
+  /*font-weight: bolder;*/
+  font-size: 1.7rem;
+  margin-bottom: 2%;
+  color: transparent;
+}
+
+.principal-form {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.form-group {
+  height: 30%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: stretch;
+}
+
+.error-message {
+  position: absolute;
+  top: 80%;
+  font-size: 12px;
+  color: var(--burgundy);
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  width: 64%;
+  height: 55%;
+  border-radius: 4px 4px 0 0;
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid var(--black);
+  font-family: var(--font-secondary);
+  font-size: 1.3rem;
+  padding: 5px 10px;
+  font-weight: bold;
+  background: rgba(183, 110, 121, 0.7);
+}
+
+input:focus {
+  border-color: var(--burgundy);
+}
+
+::placeholder {
+  color: white;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: text-indent 0.4s 0.4s ease;
+  text-indent: -100%;
+}
+
+.submit-btn {
+  height: 89%;
+  width: 44%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--burgundy);
+  font-family: var(--font-base);
+  font-size: 1.6rem;
+  color: #fff;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-top: 3%;
+}
+
+/* .submit-btn:hover {
+  background-color: var(--rose-gold);
+} */
+
+
+/* .hide {
+  display: none !important;
+}
+
+.show {
+  display: flex !important;
+} */
+
+/* First Try *****************************************************************************
+header {
+  height: 17vh;
+  width: 100vw;
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}*/
+
+/*li {
+  list-style: none;
+}*/
+
+/*nav li a {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 23px;
+}*/
+
+/*div p {
+  font-size: 20px;
+}
+
 a:hover{
   border-bottom: 3px solid  #F3C13F;
 }
 
 .logo-header {
   height: 50%;
-}
+}*/
 
-.login-container {
+/*.login-container {
   height: 42vh; 
   width: 42vw; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* max-width: 500px; */
   margin: 0 auto;
-  /* padding: 10px 100px 10px 100px;  */
   background-color: var(--brown);
   border: 1px solid #ccc;
   border-radius: 1.9rem;
@@ -115,51 +299,34 @@ h1 {
   height: 100%;
   width: 100%;
   text-align: center;
-}
+}*/
 
-.form-group {
+/*.form-group {
   height: 30%;
   position: relative;
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
-  /* margin-bottom: 10%; */
-  /* width: 100%; */
   flex-wrap: wrap;
   align-content: stretch;
-  /* margin-top: 2%; */
 }
 
-
-/* .error-message {
-  height: 15%;
-  color: white;
-  font-size: 14px;
-  margin-top: 5px;
-} */
 .error-message {
   position: absolute;
   top: 80%; 
-  /* left: 0; */
-  /* height: 15%; */
   font-size: 12px;
   color: white;
-  /* margin-top: 5px; */
-}
+}*/
 
 
 /* label {
   margin-bottom: 5px;
 } */
 
-input {
-  /* padding: 5px; */
-  /* border: 1px solid #ccc; */
+/*input {
   width: 64%;
   height: 50%;
   border-radius: 4px 4px 0  0;
-  /* font-size: 1rem; */
   border: 0;
   outline: 0;
   border-bottom: 2px solid var(--black);
@@ -172,7 +339,6 @@ input {
 
 input:focus {
   border-color: var(--burgundy);
-  /* outline: 1px dotted #000 */
 }
 
 [placeholder]:focus::-webkit-input-placeholder {
@@ -193,15 +359,14 @@ input:focus {
   color: #fff;
   cursor: pointer;
   align-self: flex-end;
-  /* margin-bottom: 2%; */
-  
-  /* margin-top: 0%; */
 }
 
 .submit-btn:hover {
   background-color: #0069d9;
 }
-
+*/
+/*End of the first try*/
+/***************************************************************************/
 
 
 /*:root {

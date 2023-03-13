@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Header from './Header';
+// import Header from './Header';
+import OtroHeader from './OtroHeader';
 import '../styles/Menu.css';
 
 const Menu = () => {
@@ -19,7 +20,7 @@ const Menu = () => {
 
   return (
     <>
-      <Header />
+      <OtroHeader />
       <button className="menu-button" onClick={toggleMenu}>
         Menu
       </button>
