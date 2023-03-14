@@ -1,5 +1,5 @@
 import React from "react";
-import CaraLogoBlack from "../assets/cara_logo_black";
+import CaraLogoBlack from "../assets/cara_logo_black.png";
 
 const OtroHeader = () => {
   return (
