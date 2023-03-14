@@ -8,7 +8,6 @@
   box-sizing: border-box;
 }
 
-
 :root {
   --rose-gold: #B76E79;
   --lilac: #C8A2C8;
@@ -24,7 +23,6 @@
   --font-base: 'Montserrat', sans-serif;
   --font-secondary: 'Poiret One', cursive;
 }
-
 
 body {
   width: 100vw;
@@ -42,7 +40,7 @@ body {
   flex-wrap: wrap;
 }
 
-header {
+#root header {
   position: absolute;
   height: 17vh;
   width: 100vw;
@@ -54,46 +52,12 @@ header {
   /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
 }
 
-
-/*header {
-  height: 17vh;
-  width: 100vw;
-  background-color: var(--black);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}*/
-
-li {
-  list-style: none;
-}
-
-nav li a {
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 35px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: black;
-  text-decoration: none;
-  display: block;
-  padding: 23px;
-}
-
-div p {
-  font-size: 20px;
-}
-
-a:hover {
-  border-bottom: 3px solid #F3C13F;
-}
-
-.logo-header {
+#root header .logo-header {
   height: 50%;
   margin-bottom: 1.5%;
 }
 
-.login-body {
+#root .login-body {
   display: flex;
   height: 100vh;
   width: 100vw;
@@ -103,7 +67,7 @@ a:hover {
   align-items: center;
 }
 
-.login-container {
+#root .login-body .login-container {
   position: relative;
   height: 35vh;
   width: 42vw;
@@ -117,16 +81,7 @@ a:hover {
   /*border-radius: 1.9rem;*/
 }
 
-/*.square {
-  position: absolute;
-  background-color: red;
-  height: 100%;
-  border: solid;
-  width: 50%;
-  z-index: 3;
-}*/
-
-.login-container:before {
+#root .login-body .login-container:before {
   content:"";
   position:absolute;
   inset:0px 105px 0px 105px;
@@ -134,13 +89,7 @@ a:hover {
   border-image:linear-gradient(0deg,black 30%,#0000 0 80%,black 0) 1;
 }
 
-/* .square:after {
-  inset:-50px;
-  border-image:linear-gradient(-45deg,green 20%,#0000 0 80%,green 0) 10;
-} */
-
-
-.login-body .login-container h1 {
+#root .login-body .login-container h1 {
   height: 22%;
   display: flex;
   align-items: flex-end;
@@ -150,13 +99,13 @@ a:hover {
   color: transparent;
 }
 
-.principal-form {
+#root .login-body .login-container .principal-form {
   height: 100%;
   width: 100%;
   text-align: center;
 }
 
-.form-group {
+#root .login-body .login-container .principal-form .form-group {
   height: 30%;
   position: relative;
   display: flex;
@@ -166,21 +115,11 @@ a:hover {
   align-content: stretch;
 }
 
-.error-message {
-  position: absolute;
-  top: 80%;
-  font-size: 12px;
-  color: var(--burgundy);
-  font-weight: 700;
-  background: rgba(255, 255, 255, 0.7);
-}
-
-
-label {
+/* label {
   margin-bottom: 5px;
-}
+} */
 
-input {
+#root .login-body .login-container .principal-form .form-group input {
   width: 64%;
   height: 55%;
   border-radius: 4px 4px 0 0;
@@ -194,11 +133,20 @@ input {
   background: rgba(183, 110, 121, 0.7);
 }
 
-input:focus {
+#root .login-body .login-container .principal-form .form-group .error-message {
+  position: absolute;
+  top: 80%;
+  font-size: 12px;
+  color: var(--burgundy);
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+#root .login-body .login-container .principal-form .form-group input:focus {
   border-color: var(--burgundy);
 }
 
-::placeholder {
+#root .login-body .login-container .principal-form .form-group input::placeholder {
   color: white;
 }
 
@@ -207,7 +155,7 @@ input:focus {
   text-indent: -100%;
 }
 
-.submit-btn {
+#root .login-body .login-container .principal-form .form-group .submit-btn {
   height: 89%;
   width: 44%;
   padding: 10px 20px;
@@ -369,6 +317,8 @@ input:focus {
 /***************************************************************************/
 
 
+
+
 /*:root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -439,3 +389,53 @@ button:focus-visible {
   }
 }
 */
+
+
+/*header {
+  height: 17vh;
+  width: 100vw;
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}*/
+
+/*li {
+  list-style: none;
+}
+
+nav li a {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 23px;
+}
+
+div p {
+  font-size: 20px;
+}
+
+a:hover {
+  border-bottom: 3px solid #F3C13F;
+}
+*/
+
+/*.square {
+  position: absolute;
+  background-color: red;
+  height: 100%;
+  border: solid;
+  width: 50%;
+  z-index: 3;
+}*/
+
+
+/* .square:after {
+  inset:-50px;
+  border-image:linear-gradient(-45deg,green 20%,#0000 0 80%,green 0) 10;
+} */
