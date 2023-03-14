@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
 .menu-button {
   width: 20vw;
+  height: 17vh; 
   position: absolute;
   top: 10px;
   right: 10px;
@@ -13,31 +16,46 @@
 .menu {
   position: fixed;
   top: 0;
-  right: -200px;
+  /*right: -200px;*/
+  right: -320px;
   height: 100vh;
-  width: 200px;
+  /*width: 200px;*/
+  width: 320px;
   background-color: #f9f9f9;
-  padding: 20px;
+  /*padding: 20px;*/
+  /*padding: 145px 0 0 50px;*/
   transition: right 0.3s ease-in-out;
   z-index: 1;
+  display: flex;
 }
 
 .menu.open {
   right: 0;
+  width: 31vw;
 }
 
 .menu ul {
+  width: 100%;
   list-style: none;
-  margin: 0;
+  /*margin: 0;*/
   padding: 0;
+  font-family: 'Poiret One', cursive;
+  margin-top: 45%;
 }
 
 .menu li {
+  margin-left: 25%;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.menu ul li img {
+  height: 20px;
 }
 
 .menu a {
-  color: #333;
+  color: black;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;

@@ -28,10 +28,24 @@ const Menu = () => {
       <nav className={`menu ${isOpen ? 'open' : ''}`}>
         <ul>
           <li>
-            <Link to="/gh-react-vite/">Login</Link>
+            <img src="./src/assets/users-icon.png" className='logo-header' alt="users icon" />
+            <Link to="/gh-react-vite/users">Users</Link>
           </li>
           <li>
-            <Link to="/gh-react-vite/users">Users</Link>
+            <img src="./src/assets/products-icon.png" className='logo-header' alt="products icon" />
+            <Link to="/gh-react-vite/products">Products</Link>
+          </li>
+          <li>
+            <img src="./src/assets/orders-icon.png" className='logo-header' alt="orders icon" />
+            <Link to="/gh-react-vite/orders">Orders</Link>
+          </li>
+          <li>
+            <img src="./src/assets/status-icon.png" className='logo-header' alt="status icon" />
+            <Link to="/gh-react-vite/status">Status</Link>
+          </li>
+          <li>
+            <img src="./src/assets/profile-icon.png" className='logo-header' alt="profile icon" />
+            <Link to="/gh-react-vite/profile">Profile</Link>
           </li>
           <li>
             <button className="link-button" onClick={onLogoutClick}>
