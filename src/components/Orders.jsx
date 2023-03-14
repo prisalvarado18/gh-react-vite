@@ -13,8 +13,8 @@ const Orders = () => {
           <table className="product-table">
             <thead>
               <tr>
-                <th>Chosen Product</th>
-                <th>Price</th>
+                <th>PRODUCT</th>
+                <th>PRICE</th>
               </tr>
             </thead>
             <tbody>
@@ -70,20 +70,24 @@ const Orders = () => {
 
           <div className="product-selection">
             <div className="product-item">
-              <img src="img" alt="Product 1" />
-              <button>Add product to table</button>
+              <button>
+                <img src="src/assets/product-empanada-morocho.png" alt="Product 1" />
+              </button>
             </div>
             <div className="product-item">
-              <img src="imgg" alt="Product 2" />
-              <button>Add product to table</button>
+              <button>
+                <img src="src/assets/product-summer-rolls.png" alt="Product 2" />
+              </button>
             </div>
             <div className="product-item">
-              <img src="img" alt="Product 3" />
-              <button>Add product to table</button>
+              <button>
+                <img src="src/assets/product-cebiche.png" alt="Product 3" />
+              </button>
             </div>
             <div className="product-item">
-              <img src="link" alt="Product 4" />
-              <button>Add product to table</button>
+              <button>
+                <img src="src/assets/product-pollo-agridulce.png" alt="Product 4" />
+              </button>
             </div>
           </div>
         </section>
