@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 // Import axios to make HTTP requests
 import axios from "axios";
-import Header from "./Header";
+// import Header from "./Header";
+import OtroHeader from "./OtroHeader";
 import jwt from 'jwt-decode';
 import { useNavigate } from 'react-router';
 
@@ -91,7 +92,7 @@ const Login = () => {
                         // console.log("This is the email:" + JSON.parse(response.config.data)["email"]);
                         // console.log("This is the user data:" + user[Object.keys(user)[0]])
                         // console.log(response.data.data.admin)
-                        response.data.data.admin === true ? navigate("/gh-react-vite/users") : navigate("/gh-react-vite/")
+                        response.data.data.admin === true ? navigate("/gh-react-vite/users") : navigate("/gh-react-vite/orders")
                         //navigate('/gh-react-vite/users', {replace: true});
 
                     }
@@ -121,28 +122,30 @@ const Login = () => {
 
     return (
         <>
-            <Header />
-            <section className="login-container">
-                <h1>WELCOME</h1>
-                <form className="principal-form" onSubmit={handleSubmit} noValidate>
-                    <div className="form-group">
-                        <input type="email" id="email" name="email" value={credentials.email} placeholder="email address" onChange={handleInputChange} required />
-                        {error && error.includes("Empty field") && <div className="error-message">Please enter your email address</div>}
-                        {error && error.includes("Invalid email") && <div className="error-message">Invalid email</div>}
-                        {error && error.includes("Email doesn't exist") && <div className="error-message">Email doesn't exist. Please try again</div>}
-                    </div>
-                    <div className="form-group">
-                        <input type="password" id="password" name="password" value={credentials.password} placeholder="password" onChange={handleInputChange} required />
-                        {error && error.includes("Empty field") && <div className="error-message">Please enter your password</div>}
-                        {error && error.includes("Invalid password") && <div className="error-message">Password must be at least 8 characters</div>}
-                        {error && error.includes("Incorrect password") && <div className="error-message">Password is incorrect. Please try again</div>}
-                    </div>
-                    <div className="form-group">
-                        <button className="submit-btn" type="submit" disabled={loading}>
-                            {loading ? "Logging in..." : "LOGIN"}
-                        </button>
-                    </div>
-                </form>
+            <OtroHeader />
+            <section className="login-body">
+                <section className="login-container">
+                    <h1>WELCOME</h1>
+                    <form className="principal-form" onSubmit={handleSubmit} noValidate>
+                        <div className="form-group">
+                            <input type="email" id="email" name="email" value={credentials.email} placeholder="email address" autocomplete= "off" onChange={handleInputChange} required />
+                            {error && error.includes("Empty field") && <div className="error-message">Please enter your email address</div>}
+                            {error && error.includes("Invalid email") && <div className="error-message">Invalid email</div>}
+                            {error && error.includes("Email doesn't exist") && <div className="error-message">Email doesn't exist. Please try again</div>}
+                        </div>
+                        <div className="form-group">
+                            <input type="password" id="password" name="password" value={credentials.password} placeholder="password" autocomplete= "off" onChange={handleInputChange} required />
+                            {error && error.includes("Empty field") && <div className="error-message">Please enter your password</div>}
+                            {error && error.includes("Invalid password") && <div className="error-message">Password must be at least 8 characters</div>}
+                            {error && error.includes("Incorrect password") && <div className="error-message">Password is incorrect. Please try again</div>}
+                        </div>
+                        <div className="form-group">
+                            <button className="submit-btn" type="submit" disabled={loading}>
+                                {loading ? "..." : "LOGIN"}
+                            </button>
+                        </div>
+                    </form>
+                </section>
             </section>
         </>
     );
