@@ -190,7 +190,7 @@ input {
   font-family: var(--font-secondary);
   font-size: 1.3rem;
   padding: 5px 10px;
-  font-weight: bold;
+  font-weight: lighter;
   background: rgba(183, 110, 121, 0.7);
 }
 
