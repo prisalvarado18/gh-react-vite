@@ -40,7 +40,7 @@ body {
   flex-wrap: wrap;
 }
 
-#root header {
+#root .header-login {
   position: absolute;
   height: 17vh;
   width: 100vw;
@@ -52,7 +52,7 @@ body {
   /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
 }
 
-#root header .logo-header {
+#root .header-login .logo-header-login {
   height: 50%;
   margin-bottom: 1.5%;
 }

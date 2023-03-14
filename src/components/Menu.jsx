@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 // import Header from './Header';
 import OtroHeader from './OtroHeader';
+import LoggedinHeader from './LoggedinHeader';
 import '../styles/Menu.css';
 
 const Menu = () => {
@@ -20,7 +21,7 @@ const Menu = () => {
 
   return (
     <>
-      <OtroHeader />
+      <LoggedinHeader />
       <button className="menu-button" onClick={toggleMenu}>
         Menu
       </button>
