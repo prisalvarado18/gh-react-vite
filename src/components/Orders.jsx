@@ -9,7 +9,9 @@ const Orders = () => {
     <>
       <Menu />
       <section className="orders-body">
-        <section className="client-name"></section>
+        <section className="client-name">
+          <input type="text" placeholder="client name" autocomplete="off" required />
+        </section>
         <section className="orders-container">
           <table className="product-table">
             <thead>
@@ -73,24 +75,40 @@ const Orders = () => {
             <div className="product-row-first">
               <div className="product-item">
                 <button>
-                  <img src="src/assets/product-empanada-morocho-2.png" alt="Product 1" />
+                  <figure className="image-container">
+                    <img src="src/assets/product-empanada-morocho-3.png" alt="Product 1" />
+                  </figure>
+                  <p className="product-description">MOROCHO PATTY</p>
+                  <p className="product-price">18.00</p>
                 </button>
               </div>
               <div className="product-item">
                 <button>
-                  <img src="src/assets/product-summer-rolls-2.png" alt="Product 2" />
+                  <figure className="image-container">
+                    <img src="src/assets/product-summer-rolls-2.png" alt="Product 2" />
+                  </figure>
+                  <p className="product-description">MOROCHO PATTY</p>
+                  <p className="product-price">18.00</p>
                 </button>
               </div>
             </div>
             <div className="product-row-second">
               <div className="product-item">
                 <button>
-                  <img src="src/assets/product-cebiche-2.png" alt="Product 3" />
+                  <figure className="image-container">
+                    <img src="src/assets/product-cebiche-2.png" alt="Product 3" />
+                  </figure>
+                  <p className="product-description">MOROCHO PATTY</p>
+                  <p className="product-price">18.00</p>
                 </button>
               </div>
               <div className="product-item">
                 <button>
-                  <img src="src/assets/product-pollo-agridulce-2.png" alt="Product 4" />
+                  <figure className="image-container">
+                    <img src="src/assets/product-pollo-agridulce-2.png" alt="Product 4" />
+                  </figure>
+                  <p className="product-description">MOROCHO PATTY</p>
+                  <p className="product-price">18.00</p>
                 </button>
               </div>
             </div>

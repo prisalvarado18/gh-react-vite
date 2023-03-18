@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .orders-body {
     height: 83vh;
@@ -12,10 +13,27 @@
 }
 
 .client-name {
-    background-color: brown;
     height: 10%;
     width: 30%;
 }
+
+.client-name input {
+    width: 100%;
+    height: 55%;
+    border-radius: 4px 4px 0 0;
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid black;
+    font-family:'Poiret One';
+    font-size: 1.3rem;
+    padding: 5px 10px;
+    font-weight: lighter;
+    background: rgba(183, 110, 121, 0.842);
+}
+
+.client-name input::placeholder {
+    color: white;
+  }
 
 .orders-container {
     height: 90%;
@@ -36,7 +54,7 @@
 /*********************Second*********************/
 .menu-buttons {
     width: 15.5%;
-    height: 90%;
+    height: 100%;
 }
 
 .menu-buttons table {
@@ -104,9 +122,17 @@
     display: flex;
 }
 
-.product-selection .product-item img {
-    height: 35%;
-    width: 80%;
+.product-selection .product-item .image-container {
+    height: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.product-selection .product-item .image-container img {
+    /*height: 100%;*/
+    width: 100%;
+    /*height: 35%;
+    width: 80%;*/
 
 }
 
@@ -114,7 +140,10 @@
     background-color: #0F1D22;
     height: 90%;
     width: 100%;
-    border:none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .product-selection .product-row-first {
@@ -134,4 +163,18 @@
 
 .product-selection .product-row-second .product-item button {
     margin-top: 15%;
+}
+
+.product-item button p {
+    height: 20%;
+}
+
+.product-item button .product-description {
+    color: #C9AB81;
+    font-family: 'Montserrat';
+}
+
+.product-item button .product-price {
+    color: white;
+    font-family: 'Poiret One';
 }
