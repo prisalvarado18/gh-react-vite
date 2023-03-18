@@ -112,7 +112,7 @@ const Orders = () => {
                       <img src={product.image} alt={product.name} />
                     </figure>
                     <p className="product-description">{product.name.toUpperCase()}</p>
-                    <p className="product-price">{product.price}</p>
+                    <p className="product-price">{product.price.toFixed(2)}</p>
                   </button>
                 </div>
               ))}
@@ -125,7 +125,7 @@ const Orders = () => {
                       <img src={product.image} alt={product.name} />
                     </figure>
                     <p className="product-description">{product.name.toUpperCase()}</p>
-                    <p className="product-price">{product.price}</p>
+                    <p className="product-price">{product.price.toFixed(2)}</p>
                   </button>
                 </div>
               ))}
