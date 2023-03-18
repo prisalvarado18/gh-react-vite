@@ -9,6 +9,7 @@ import ProductsIcon from "../assets/products-icon.png";
 import OrdersIcon from "../assets/orders-icon.png";
 import StatusIcon from "../assets/status-icon.png";
 import ProfileIcon from "../assets/profile-icon.png";
+import CutleryIcon from "../assets/cutlery-icon.png";
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ const Menu = () => {
     <>
       <LoggedinHeader />
       <button className={`menu-button ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-        <img className={isOpen ? 'move-left' : ''} src="./src/assets/cutlery-icon.png" alt="cutlery icon" />
+        <img className={isOpen ? 'move-left' : ''} src={CutleryIcon} alt="cutlery icon" />
       </button>
       <nav className={`menu ${isOpen ? 'open' : ''}`}>
         <ul>
