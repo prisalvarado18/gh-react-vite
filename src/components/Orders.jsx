@@ -9,6 +9,7 @@ const Orders = () => {
     <>
       <Menu />
       <section className="orders-body">
+        <section className="client-name"></section>
         <section className="orders-container">
           <table className="product-table">
             <thead>
@@ -69,25 +70,29 @@ const Orders = () => {
           </div>
 
           <div className="product-selection">
-            <div className="product-item">
-              <button>
-                <img src="src/assets/product-empanada-morocho.png" alt="Product 1" />
-              </button>
+            <div className="product-row-first">
+              <div className="product-item">
+                <button>
+                  <img src="src/assets/product-empanada-morocho-2.png" alt="Product 1" />
+                </button>
+              </div>
+              <div className="product-item">
+                <button>
+                  <img src="src/assets/product-summer-rolls-2.png" alt="Product 2" />
+                </button>
+              </div>
             </div>
-            <div className="product-item">
-              <button>
-                <img src="src/assets/product-summer-rolls.png" alt="Product 2" />
-              </button>
-            </div>
-            <div className="product-item">
-              <button>
-                <img src="src/assets/product-cebiche.png" alt="Product 3" />
-              </button>
-            </div>
-            <div className="product-item">
-              <button>
-                <img src="src/assets/product-pollo-agridulce.png" alt="Product 4" />
-              </button>
+            <div className="product-row-second">
+              <div className="product-item">
+                <button>
+                  <img src="src/assets/product-cebiche-2.png" alt="Product 3" />
+                </button>
+              </div>
+              <div className="product-item">
+                <button>
+                  <img src="src/assets/product-pollo-agridulce-2.png" alt="Product 4" />
+                </button>
+              </div>
             </div>
           </div>
         </section>
