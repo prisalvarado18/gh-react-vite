@@ -1,14 +1,48 @@
 import React from "react";
 import Menu from "./Menu";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import OtroHeader from "./OtroHeader";
 import LoggedinHeader from "./LoggedinHeader";
 import '../styles/Orders.css';
 
 const Orders = () => {
+  const [products, setProducts] = useState([]);
+  const [productsType, setProductsType] = useState([]);
+  const [productsObtained, setProductsObtained] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    let headers = { Authorization: `Bearer ${token}` };
+
+    if (!productsObtained) {
+      axios.get('https://palvaradoristorante.onrender.com/products?limit=4&page=1', { headers })
+        .then((response) => {
+          console.log(response);
+          setProducts(response.data);
+          setProductsObtained(true);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }, [productsObtained]);
+
+  const breakfastList = () => {
+    if (products && products.length) {
+      const breakfast = products.filter((product) => product.type === 'Brunch');
+      console.log(breakfast);
+      setProductsType(breakfast);
+    }
+  }
+
   return (
     <>
       <Menu />
       <section className="orders-body">
+        <section className="client-name">
+          <input type="text" placeholder="client name" required />
+        </section>
         <section className="orders-container">
           <table className="product-table">
             <thead>
@@ -38,7 +72,7 @@ const Orders = () => {
               <tbody>
                 <tr>
                   <td className="border-bottom-btn">
-                    <button className="type-btn">
+                    <button className="type-btn" onClick={breakfastList}>
                       <p>BREAKFAST</p>
                     </button>
                   </td>
@@ -69,25 +103,45 @@ const Orders = () => {
           </div>
 
           <div className="product-selection">
-            <div className="product-item">
-              <button>
-                <img src="src/assets/product-empanada-morocho.png" alt="Product 1" />
-              </button>
+            <div className="product-row-first">
+              <div className="product-item">
+                <button>
+                  <figure className="image-container">
+                    <img src="src/assets/product-empanada-morocho.png" alt="Product 1" />
+                  </figure>
+                  <p className="product-description">MOROCHO PATTY</p>
+                  <p className="product-price">18.00</p>
+                </button>
+              </div>
+              <div className="product-item">
+                <button>
+                  <figure className="image-container">
+                    <img src="src/assets/product-summer-rolls.png" alt="Product 2" />
+                  </figure>
+                  <p className="product-description">MOROCHO PATTY</p>
+                  <p className="product-price">18.00</p>
+                </button>
+              </div>
             </div>
-            <div className="product-item">
-              <button>
-                <img src="src/assets/product-summer-rolls.png" alt="Product 2" />
-              </button>
-            </div>
-            <div className="product-item">
-              <button>
-                <img src="src/assets/product-cebiche.png" alt="Product 3" />
-              </button>
-            </div>
-            <div className="product-item">
-              <button>
-                <img src="src/assets/product-pollo-agridulce.png" alt="Product 4" />
-              </button>
+            <div className="product-row-second">
+              <div className="product-item">
+                <button>
+                  <figure className="image-container">
+                    <img src="src/assets/product-cebiche.png" alt="Product 3" />
+                  </figure>
+                  <p className="product-description">MOROCHO PATTY</p>
+                  <p className="product-price">18.00</p>
+                </button>
+              </div>
+              <div className="product-item">
+                <button>
+                  <figure className="image-container">
+                    <img src="src/assets/product-pollo-agridulce.png" alt="Product 4" />
+                  </figure>
+                  <p className="product-description">MOROCHO PATTY</p>
+                  <p className="product-price">18.00</p>
+                </button>
+              </div>
             </div>
           </div>
         </section>

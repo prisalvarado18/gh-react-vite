@@ -128,13 +128,13 @@ const Login = () => {
                     <h1>WELCOME</h1>
                     <form className="principal-form" onSubmit={handleSubmit} noValidate>
                         <div className="form-group">
-                            <input type="email" id="email" name="email" value={credentials.email} placeholder="email address" autocomplete= "off" onChange={handleInputChange} required />
+                            <input type="email" id="email" name="email" value={credentials.email} placeholder="email address" autoComplete= "off" onChange={handleInputChange} required />
                             {error && error.includes("Empty field") && <div className="error-message">Please enter your email address</div>}
                             {error && error.includes("Invalid email") && <div className="error-message">Invalid email</div>}
                             {error && error.includes("Email doesn't exist") && <div className="error-message">Email doesn't exist. Please try again</div>}
                         </div>
                         <div className="form-group">
-                            <input type="password" id="password" name="password" value={credentials.password} placeholder="password" autocomplete= "off" onChange={handleInputChange} required />
+                            <input type="password" id="password" name="password" value={credentials.password} placeholder="password" autoComplete= "off" onChange={handleInputChange} required />
                             {error && error.includes("Empty field") && <div className="error-message">Please enter your password</div>}
                             {error && error.includes("Invalid password") && <div className="error-message">Password must be at least 8 characters</div>}
                             {error && error.includes("Incorrect password") && <div className="error-message">Password is incorrect. Please try again</div>}

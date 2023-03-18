@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .orders-body {
     height: 83vh;
@@ -7,10 +8,35 @@
     justify-content: center;
     padding: 25px;
     margin-top: 15vh;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
-.orders-container {
-    height: 100%;
+.orders-body .client-name {
+    height: 10%;
+    width: 30%;
+}
+
+.orders-body .client-name input {
+    width: 100%;
+    height: 55%;
+    border-radius: 4px 4px 0 0;
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid black;
+    font-family: 'Poiret One';
+    font-size: 1.3rem;
+    padding: 5px 10px;
+    font-weight: lighter;
+    background: rgba(183, 110, 121, 0.842);
+}
+
+.orders-body .client-name input::placeholder {
+    color: white;
+}
+
+.orders-body .orders-container {
+    height: 90%;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -19,30 +45,30 @@
 }
 
 /**********************First**********************/
-.product-table {
+.orders-body .orders-container .product-table {
     width: 30%;
-    height: 10%;
+    height: 90%;
     border-collapse: collapse;
 }
 
 /*********************Second*********************/
-.menu-buttons {
+.orders-body .orders-container .menu-buttons {
     width: 15.5%;
     height: 100%;
 }
 
-.menu-buttons table {
+.orders-body .orders-container .menu-buttons table {
     width: 100%;
     height: 100%;
     border: solid;
     border-collapse: collapse;
 }
 
-.menu-buttons table tbody tr {
+.orders-body .orders-container .menu-buttons table tbody tr {
     height: 25%;
 }
 
-.menu-buttons table tbody tr td {
+.orders-body .orders-container .menu-buttons table tbody tr td {
     height: 25%;
 }
 
@@ -50,7 +76,7 @@
     color: red;
 } */
 
-.menu-buttons table tbody tr td button:focus {
+.orders-body .orders-container .menu-buttons table tbody tr td button:focus {
     color: white;
     background-color: #7A1424;
 }
@@ -59,7 +85,7 @@
     color: red;
 } */
 
-.menu-buttons table tbody tr .border-bottom-btn {
+.orders-body .orders-container .menu-buttons table tbody tr .border-bottom-btn {
     border-bottom: solid;
 }
 
@@ -81,24 +107,74 @@
 
 /**********************Third**********************/
 .product-selection {
+    width: 40%;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
-    width: 30%;
+    align-content: space-between;
+}
+
+.product-selection .product-item {
     height: 100%;
-}
-
-.product-item {
-    height: 30%;
-    margin: 10px;
+    /*margin: 10px;*/
     text-align: center;
+    width: 44%;
+    display: flex;
 }
 
-.product-item img {
-    height: 50%;
-    width: 10%;
+.product-selection .product-item .image-container {
+    height: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.product-selection .product-item .image-container img {
+    /*height: 100%;*/
+    width: 100%;
+    /*height: 35%;
+    width: 80%;*/
 
 }
 
 .product-item button {
-    background-color: green;
+    background-color: #0F1D22;
+    height: 90%;
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-selection .product-row-first {
+    display: flex;
+    height: 50%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.product-selection .product-row-second {
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+    width: 100%;
+    border-top: solid 1px #ACA196;
+}
+
+.product-selection .product-row-second .product-item button {
+    margin-top: 15%;
+}
+
+.product-item button p {
+    height: 20%;
+}
+
+.product-item button .product-description {
+    color: #C9AB81;
+    font-family: 'Montserrat';
+}
+
+.product-item button .product-price {
+    color: white;
+    font-family: 'Poiret One';
 }
