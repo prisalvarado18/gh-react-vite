@@ -28,6 +28,15 @@ const Orders = () => {
     }
   }, [productsObtained]);
 
+  const breakfastList = () => {
+    console.log(products)
+    if (products && products.length) {
+      const breakfast = products.filter((product) => product.type === 'Breakfast');
+      console.log(breakfast);
+      setProductsType(breakfast);
+    }
+  }
+
   const lunchList = () => {
     console.log(products)
     if (products && products.length) {
@@ -36,6 +45,24 @@ const Orders = () => {
       setProductsType(lunch);
     }
   }
+
+  const dinnerList = () => {
+    console.log(products)
+    if (products && products.length) {
+      const dinner = products.filter((product) => product.type === 'Dinner');
+      console.log(dinner);
+      setProductsType(dinner);
+    }
+  }
+
+  const drinksList = () => {
+    console.log(products)
+    if (products && products.length) {
+      const drinks = products.filter((product) => product.type === 'Drinks');
+      console.log(drinks);
+      setProductsType(drinks);
+    }
+  }  
 
   return (
     <>
