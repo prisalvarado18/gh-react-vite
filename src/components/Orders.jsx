@@ -16,7 +16,7 @@ const Orders = () => {
     let headers = { Authorization: `Bearer ${token}` };
 
     if (!productsObtained) {
-      axios.get('https://palvaradoristorante.onrender.com/products?limit=10&page=1', { headers })
+      axios.get('https://palvaradoristorante.onrender.com/products', { headers })
         .then((response) => {
           console.log(response);
           setProducts(response.data);
@@ -62,7 +62,7 @@ const Orders = () => {
       console.log(drinks);
       setProductsType(drinks);
     }
-  }  
+  }
 
   return (
     <>
@@ -100,7 +100,7 @@ const Orders = () => {
               <tbody>
                 <tr>
                   <td className="border-bottom-btn">
-                    <button className="type-btn">
+                    <button className="type-btn" onClick={breakfastList}>
                       <p>BREAKFAST</p>
                     </button>
                   </td>
@@ -114,14 +114,14 @@ const Orders = () => {
                 </tr>
                 <tr>
                   <td className="border-bottom-btn">
-                    <button className="type-btn">
+                    <button className="type-btn" onClick={dinnerList}>
                       <p>DINNER</p>
                     </button>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <button className="type-btn">
+                    <button className="type-btn" onClick={drinksList}>
                       <p>DRINKS</p>
                     </button>
                   </td>
