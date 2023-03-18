@@ -16,7 +16,7 @@ const Orders = () => {
     let headers = { Authorization: `Bearer ${token}` };
 
     if (!productsObtained) {
-      axios.get('https://palvaradoristorante.onrender.com/products', { headers })
+      axios.get('https://palvaradoristorante.onrender.com/products?limit=20&page=1', { headers })
         .then((response) => {
           console.log(response);
           setProducts(response.data);
