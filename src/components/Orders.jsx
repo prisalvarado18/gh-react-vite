@@ -107,24 +107,34 @@ const Orders = () => {
             <input type="text" placeholder="client name" required />
           </section>
           <section className="orders-container">
-            <table className="product-table">
-              <thead>
-                <tr>
-                  <th>PRODUCT</th>
-                  <th>PRICE</th>
-                  <th>QTY</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Array(16).fill().map((item, index) => (
-                  <tr key={index}>
-                    <td>{itemsCart[index]?.name || ''}</td>
-                    <td>{itemsCart[index]?.price || ''}</td>
-                    <td>{selectedItems[index]?.qty}</td>
+            <section className="product-table-btns-container">
+              <table className="product-table">
+                <thead>
+                  <tr>
+                    <th>PRODUCT</th>
+                    <th>PRICE</th>
+                    <th>QTY</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {Array(16).fill().map((item, index) => (
+                    <tr key={index}>
+                      <td className="first-row">{itemsCart[index]?.name || ''}</td>
+                      <td className="second-row">{itemsCart[index]?.price || ''}</td>
+                      <td className="third-row">{selectedItems[index]?.qty}</td>
+                    </tr>
+                  ))}
+                  <tr className="total-fee">
+                    <td>Total fee</td>
+                    <td colSpan="2"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <section className="view-send-container" >
+                <button className="send-btn">SEND</button>
+                <button className="view-all-btn"> VIEW ALL</button>
+              </section>
+            </section>
 
             <div className="menu-buttons">
               <table>
