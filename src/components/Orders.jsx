@@ -64,6 +64,20 @@ const Orders = () => {
     }
   }
 
+  const [selectedItems, setSelectedItems] = useState([]);
+
+  const addToCart = ({ _id: productId }) => {
+    console.log(selectedItems);
+    setSelectedItems([...selectedItems, { qty: 1, product: productId }]);
+  };
+
+  const [itemsCart, setItemsCart] = useState([]);
+
+  const showItemsCart = (product) => {
+    console.log(itemsCart);
+    setItemsCart(prevState => [...prevState, product]);
+  }
+
   return (
     <>
       <Menu />
@@ -79,21 +93,18 @@ const Orders = () => {
                 <th>PRICE</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Chosen Product 1</td>
-                <td>$1</td>
-              </tr>
-              <tr>
-                <td>Chosen Product 2</td>
-                <td>$2</td>
-              </tr>
-              <tr>
-                <td>Chosen Product 3</td>
-                <td>$3</td>
-              </tr>
-            </tbody>
+            {itemsCart.map((product, index) => {
+              return (
+                <tbody key={index}>
+                  <tr>
+                    <td>{product.name}</td>
+                    <td>{product.price}</td>
+                  </tr>
+                </tbody>
+              )
+            })}
           </table>
+
 
           <div className="menu-buttons">
             <table>
@@ -134,7 +145,7 @@ const Orders = () => {
             <div className="product-row-first">
               {productsType.slice(0, 2).map((product, index) => (
                 <div className="product-item" key={index}>
-                  <button>
+                  <button onClick={() => {addToCart(product); showItemsCart(product)}}>
                     <figure className="image-container">
                       <img src={product.image} alt={product.name} />
                     </figure>
@@ -147,7 +158,7 @@ const Orders = () => {
             <div className="product-row-second">
               {productsType.slice(2, 4).map((product, index) => (
                 <div className="product-item" key={index}>
-                  <button>
+                  <button onClick={() => {addToCart(product); showItemsCart(product)}}>
                     <figure className="image-container">
                       <img src={product.image} alt={product.name} />
                     </figure>
