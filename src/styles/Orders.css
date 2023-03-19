@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+
+.orders-main {
+    background-image: url(../assets/bg-orders.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
 .orders-body {
     height: 83vh;
     width: 100vw;

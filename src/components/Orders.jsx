@@ -101,93 +101,95 @@ const Orders = () => {
   return (
     <>
       <Menu />
-      <section className="orders-body">
-        <section className="client-name">
-          <input type="text" placeholder="client name" required />
-        </section>
-        <section className="orders-container">
-          <table className="product-table">
-            <thead>
-              <tr>
-                <th>PRODUCT</th>
-                <th>PRICE</th>
-                <th>QTY</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Array(16).fill().map((item, index) => (
-                <tr key={index}>
-                  <td>{itemsCart[index]?.name || ''}</td>
-                  <td>{itemsCart[index]?.price || ''}</td>
-                  <td>{selectedItems[index]?.qty}</td>
+      <section className="orders-main">
+        <section className="orders-body">
+          <section className="client-name">
+            <input type="text" placeholder="client name" required />
+          </section>
+          <section className="orders-container">
+            <table className="product-table">
+              <thead>
+                <tr>
+                  <th>PRODUCT</th>
+                  <th>PRICE</th>
+                  <th>QTY</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-
-          <div className="menu-buttons">
-            <table>
+              </thead>
               <tbody>
-                <tr>
-                  <td className="border-bottom-btn">
-                    <button className="type-btn" onClick={breakfastList}>
-                      <p>BREAKFAST</p>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border-bottom-btn">
-                    <button className="type-btn" onClick={lunchList}>
-                      <p>LUNCH</p>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border-bottom-btn">
-                    <button className="type-btn" onClick={dinnerList}>
-                      <p>DINNER</p>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <button className="type-btn" onClick={drinksList}>
-                      <p>DRINKS</p>
-                    </button>
-                  </td>
-                </tr>
+                {Array(16).fill().map((item, index) => (
+                  <tr key={index}>
+                    <td>{itemsCart[index]?.name || ''}</td>
+                    <td>{itemsCart[index]?.price || ''}</td>
+                    <td>{selectedItems[index]?.qty}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
-          </div>
 
-          <div className="product-selection">
-            <div className="product-row-first">
-              {productsType.slice(0, 2).map((product, index) => (
-                <div className="product-item" key={index}>
-                  <button className="product-btn" onClick={() => { addToCart(product); showItemsCart(product) }}>
-                    <figure className="image-container">
-                      <img src={product.image} alt={product.name} />
-                    </figure>
-                    <p className="product-description">{product.name.toUpperCase()}</p>
-                    <p className="product-price">{product.price.toFixed(2)}</p>
-                  </button>
-                </div>
-              ))}
+            <div className="menu-buttons">
+              <table>
+                <tbody>
+                  <tr>
+                    <td className="border-bottom-btn">
+                      <button className="type-btn" onClick={breakfastList}>
+                        <p>BREAKFAST</p>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom-btn">
+                      <button className="type-btn" onClick={lunchList}>
+                        <p>LUNCH</p>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom-btn">
+                      <button className="type-btn" onClick={dinnerList}>
+                        <p>DINNER</p>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button className="type-btn" onClick={drinksList}>
+                        <p>DRINKS</p>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div className="product-row-second">
-              {productsType.slice(2, 4).map((product, index) => (
-                <div className="product-item" key={index}>
-                  <button className="product-btn" onClick={() => { addToCart(product); showItemsCart(product) }}>
-                    <figure className="image-container">
-                      <img src={product.image} alt={product.name} />
-                    </figure>
-                    <p className="product-description">{product.name.toUpperCase()}</p>
-                    <p className="product-price">{product.price.toFixed(2)}</p>
-                  </button>
-                </div>
-              ))}
+
+            <div className="product-selection">
+              <div className="product-row-first">
+                {productsType.slice(0, 2).map((product, index) => (
+                  <div className="product-item" key={index}>
+                    <button className="product-btn" onClick={() => { addToCart(product); showItemsCart(product) }}>
+                      <figure className="image-container">
+                        <img src={product.image} alt={product.name} />
+                      </figure>
+                      <p className="product-description">{product.name.toUpperCase()}</p>
+                      <p className="product-price">{product.price.toFixed(2)}</p>
+                    </button>
+                  </div>
+                ))}
+              </div>
+              <div className="product-row-second">
+                {productsType.slice(2, 4).map((product, index) => (
+                  <div className="product-item" key={index}>
+                    <button className="product-btn" onClick={() => { addToCart(product); showItemsCart(product) }}>
+                      <figure className="image-container">
+                        <img src={product.image} alt={product.name} />
+                      </figure>
+                      <p className="product-description">{product.name.toUpperCase()}</p>
+                      <p className="product-price">{product.price.toFixed(2)}</p>
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </section>
         </section>
       </section>
     </>
