@@ -66,16 +66,36 @@ const Orders = () => {
 
   const [selectedItems, setSelectedItems] = useState([]);
 
-  const addToCart = ({ _id: productId }) => {
+  const addToCart = ({ _id: productId, name, price }) => {
     console.log(selectedItems);
-    setSelectedItems([...selectedItems, { qty: 1, product: productId }]);
+    const existingProduct = selectedItems.find(
+      (item) => item.product === productId
+    );
+
+    if (existingProduct) {
+      const updatedSelectedItems = selectedItems.map((item) => {
+        if (item.product === productId) {
+          return { ...item, qty: item.qty + 1 };
+        }
+        return item;
+      });
+      setSelectedItems(updatedSelectedItems);
+    } else {
+      setSelectedItems([...selectedItems, { qty: 1, product: productId, name, price }]);
+    }
   };
 
   const [itemsCart, setItemsCart] = useState([]);
 
   const showItemsCart = (product) => {
     console.log(itemsCart);
-    setItemsCart(prevState => [...prevState, product]);
+    const existingProduct = itemsCart.find(
+      (item) => item.name === product.name
+    );
+
+    if (!existingProduct) {
+      setItemsCart(prevState => [...prevState, product]);
+    }
   }
 
   return (
@@ -91,20 +111,19 @@ const Orders = () => {
               <tr>
                 <th>PRODUCT</th>
                 <th>PRICE</th>
+                <th>QTY</th>
               </tr>
             </thead>
-            {itemsCart.map((product, index) => {
-              return (
-                <tbody key={index}>
-                  <tr>
-                    <td>{product.name}</td>
-                    <td>{product.price}</td>
-                  </tr>
-                </tbody>
-              )
-            })}
+            <tbody>
+              {Array(16).fill().map((item, index) => (
+                <tr key={index}>
+                  <td>{itemsCart[index]?.name || ''}</td>
+                  <td>{itemsCart[index]?.price || ''}</td>
+                  <td>{selectedItems[index]?.qty}</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
-
 
           <div className="menu-buttons">
             <table>
@@ -145,7 +164,7 @@ const Orders = () => {
             <div className="product-row-first">
               {productsType.slice(0, 2).map((product, index) => (
                 <div className="product-item" key={index}>
-                  <button onClick={() => {addToCart(product); showItemsCart(product)}}>
+                  <button className="product-btn" onClick={() => { addToCart(product); showItemsCart(product) }}>
                     <figure className="image-container">
                       <img src={product.image} alt={product.name} />
                     </figure>
@@ -158,7 +177,7 @@ const Orders = () => {
             <div className="product-row-second">
               {productsType.slice(2, 4).map((product, index) => (
                 <div className="product-item" key={index}>
-                  <button onClick={() => {addToCart(product); showItemsCart(product)}}>
+                  <button className="product-btn" onClick={() => { addToCart(product); showItemsCart(product) }}>
                     <figure className="image-container">
                       <img src={product.image} alt={product.name} />
                     </figure>
