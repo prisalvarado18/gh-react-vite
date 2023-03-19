@@ -91,20 +91,19 @@ const Orders = () => {
               <tr>
                 <th>PRODUCT</th>
                 <th>PRICE</th>
+                <th>QTY</th>
               </tr>
             </thead>
-            {itemsCart.map((product, index) => {
-              return (
-                <tbody key={index}>
-                  <tr>
-                    <td>{product.name}</td>
-                    <td>{product.price}</td>
-                  </tr>
-                </tbody>
-              )
-            })}
+            <tbody>
+              {Array(16).fill().map((item, index) => (
+                <tr key={index}>
+                  <td>{itemsCart[index]?.name || ''}</td>
+                  <td>{itemsCart[index]?.price || ''}</td>
+                  <td>{itemsCart[index]?.qty || ''}</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
-
 
           <div className="menu-buttons">
             <table>
@@ -145,7 +144,7 @@ const Orders = () => {
             <div className="product-row-first">
               {productsType.slice(0, 2).map((product, index) => (
                 <div className="product-item" key={index}>
-                  <button onClick={() => {addToCart(product); showItemsCart(product)}}>
+                  <button className="product-btn" onClick={() => { addToCart(product); showItemsCart(product) }}>
                     <figure className="image-container">
                       <img src={product.image} alt={product.name} />
                     </figure>
@@ -158,7 +157,7 @@ const Orders = () => {
             <div className="product-row-second">
               {productsType.slice(2, 4).map((product, index) => (
                 <div className="product-item" key={index}>
-                  <button onClick={() => {addToCart(product); showItemsCart(product)}}>
+                  <button className="product-btn" onClick={() => { addToCart(product); showItemsCart(product) }}>
                     <figure className="image-container">
                       <img src={product.image} alt={product.name} />
                     </figure>

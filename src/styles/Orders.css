@@ -48,8 +48,27 @@
 .orders-body .orders-container .product-table {
     width: 30%;
     height: 90%;
+    border: solid;
     border-collapse: collapse;
 }
+
+.orders-body .orders-container .product-table thead tr th {
+    height: 5%;
+}
+
+.orders-body .orders-container .product-table tbody tr {
+    border: none;
+    border-bottom: solid;
+    border-bottom-style: groove;
+}
+
+.orders-body .orders-container .product-table tbody tr td {
+    height: 5%;
+    border: none;
+    border-bottom: solid;
+    border-bottom-style: groove;
+}
+
 
 /*********************Second*********************/
 .orders-body .orders-container .menu-buttons {
