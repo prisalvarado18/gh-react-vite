@@ -193,6 +193,10 @@
     border: none;
 }
 
+.type-btn:focus {
+    outline: 0;
+}
+
 .type-btn p {
     font-size: 1rem;
     font-weight: bolder;

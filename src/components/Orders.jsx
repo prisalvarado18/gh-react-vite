@@ -21,18 +21,20 @@ const Orders = () => {
           /*console.log(response);*/
           setProducts(response.data);
           setProductsObtained(true);
+          /*document.querySelector(".b-btn")[0].click();*/
         })
         .catch((error) => {
           console.error(error);
         });
     }
+    breakfastList();
   }, [productsObtained]);
 
   const breakfastList = () => {
     /*console.log(products)*/
     if (products && products.length) {
       const breakfast = products.filter((product) => product.type === 'Breakfast');
-      /*console.log(breakfast);*/
+      console.log(breakfast);
       setProductsType(breakfast);
     }
   }
@@ -183,7 +185,7 @@ const Orders = () => {
                 <tbody>
                   <tr>
                     <td className="border-bottom-btn">
-                      <button className="type-btn" onClick={breakfastList}>
+                      <button className="type-btn" onClick={breakfastList} autoFocus>
                         <p>BREAKFAST</p>
                       </button>
                     </td>
