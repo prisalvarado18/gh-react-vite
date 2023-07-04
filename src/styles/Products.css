@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+.products-main { 
+    background-image: url(../assets/bg-tree-horizontal.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /*background-color: rgba(0, 0, 0, 0.3); */
+}
+
+
+.products-main .products-body {
+    /*height: 83vh;*/
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    margin-top: 15vh;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.products-main .products-body .products-container {
+    /*height: 90%;*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.products-main .products-body .products-container .create-product-btn {
+    height: 7vh;
+    width: 17vw;
+    background-color: #800020;
+    color: white;
+    text-transform: uppercase;
+}
+
+.products-table {
+    margin-top: 5vh;
+    width: 70%;
+    /*height: 90%;*/
+    border: solid 3px #9B948E;
+    border-collapse: collapse;
+    align-self: center;
+    color: white;
+}
+
+.products-table thead {
+    text-align: center;
+    height: 8vh;
+    background-color: #800020;
+    color: white;
+    font-family: 'Montserrat Medium';
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+.products-table thead tr th {
+    text-align: center;
+    border: 3px solid #9B948E;
+}
+
+.products-table tbody tr {
+    border: none;
+    border-bottom: solid;
+    border-bottom-style: groove;
+}
+
+.products-table tbody tr:nth-child(even){
+    background-color: #B76E79;
+}
+
+.products-table tbody tr:nth-child(odd){
+    background-color: #B76E79;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.products-table tbody tr td {
+    height: 7vh;
+    border: none;
+    border-bottom: solid;
+    border-bottom-style: groove;
+    text-align: center;
+    border: 3px solid #9B948E;
+}
+
+
+
+.update-product-btn, 
+.delete-product-btn {
+    background-color: transparent;
+    border: none;
+}
+
+
+.update-product-btn img {
+    height: 3vh;
+}
+
+.delete-product-btn img {
+    height: 3vh;
+} 
