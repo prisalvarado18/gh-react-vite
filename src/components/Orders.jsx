@@ -5,8 +5,8 @@ import axios from "axios";
 import OtroHeader from "./OtroHeader";
 import LoggedinHeader from "./LoggedinHeader";
 import '../styles/Orders.css';
-import ModalDelivered from "./ModalDelivered";
-import ModalCancelled from "./ModalCancelled";
+import ModalDelivered from "./modals/ModalDelivered";
+import ModalCancelled from "./modals/ModalCancelled";
 
 const Orders = () => {
   const [products, setProducts] = useState([]);

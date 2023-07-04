@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/ModalDelivered.css';
+import '../../styles/ModalDelivered.css';
 
 function ModalUpdateProduct({ setOpenModal, handleUpdate, handleChange, name, price, image, type }) {
 	return (

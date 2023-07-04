@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/ModalDelivered.css";
+import "../../styles/ModalDelivered.css";
 
-function ModalDeleteProduct({ setOpenModal, handleDelete }) {
+function ModalDelivered({ setOpenModal, handleUpdate }) {
     return (
         <div className="modal-background">
             <div className="modal-container">
@@ -16,10 +16,10 @@ function ModalDeleteProduct({ setOpenModal, handleDelete }) {
                     <h1>CARA</h1>
                 </div>
                 <div className="body">
-                    <p>Do you want to delete this order?</p>
+                    <p>Do you want to update this order as delivered?</p>
                 </div>
                 <div className="footer">
-                    <button onClick={handleDelete}>Yes</button>
+                    <button onClick={handleUpdate}>Yes</button>
                     <button
                         onClick={() => {
                             setOpenModal(false);
@@ -34,4 +34,4 @@ function ModalDeleteProduct({ setOpenModal, handleDelete }) {
     );
 }
 
-export default ModalDeleteProduct;
+export default ModalDelivered;

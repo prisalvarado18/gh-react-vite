@@ -3,9 +3,9 @@ import Menu from './Menu';
 import axios from 'axios';
 import IconUpdate from '../assets/icon-button-update.png';
 import IconDelete from '../assets/icon-button-delete.png';
-import ModalCreateProduct from './ModalCreateProduct.jsx';
-import ModalUpdateProduct from './ModalUpdateProduct';
-import ModalDeleteProduct from './ModalDeleteProduct';
+import ModalCreateProduct from './modals/ModalCreateProduct.jsx';
+import ModalUpdateProduct from './modals/ModalUpdateProduct';
+import ModalDeleteProduct from './modals/ModalDeleteProduct';
 import '../styles/Products.css';
 
 const Products = () => {
