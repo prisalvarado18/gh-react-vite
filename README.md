@@ -10,3 +10,11 @@ This project consists of two components: the client-side interface and the serve
 | Login | Menu |
 |:------:|:------:|
 |![Login](./src/assets/views/view-login.png) | ![Menu](./src/assets/views/view-menu.png)|
+
+### Users
+
+| Users view | Update user |
+|:------:|:------:|
+|![Create User](./src/assets/views/view-users.png) | ![Uddate User](./src/assets/views/view-users-update.png)|
+| Delete user | 
+![Uddate User](./src/assets/views/view-users-delete.png)|
