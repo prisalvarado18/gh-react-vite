@@ -13,8 +13,23 @@ This project consists of two components: the client-side interface and the serve
 
 ### Users
 
-| Users view | Update user |
+| Users view | Create user |
 |:------:|:------:|
-|![Create User](./src/assets/views/view-users.png) | ![Uddate User](./src/assets/views/view-users-update.png)|
-| Delete user | 
-![Uddate User](./src/assets/views/view-users-delete.png)|
+|![Users view](./src/assets/views/view-users.png) | ![Create User](./src/assets/views/view-users-create.png)|
+| Update user | Delete user |
+![Update User](./src/assets/views/view-users-update.png)|![Delete User](./src/assets/views/view-users-delete.png)
+
+### Products
+| Products view | Create product |
+|:------:|:------:|
+|![Products view](./src/assets/views/view-products.png) | ![Create product](./src/assets/views/view-products-create.png)|
+| Update product | Delete product | 
+![Update product](./src/assets/views/view-products-update.png)| ![Delete product](./src/assets/views/view-products-delete.png)
+
+
+### Orders
+| Orders view | Order status |
+|:------:|:------:|
+|![Orders view](./src/assets/views/view-orders.png) | ![Order status](./src/assets/views/view-orders-status.png)|
+| Cancel order | Update order | 
+![Cancel order](./src/assets/views/view-orders-cancel.png)| ![Update order](./src/assets/views/view-orders-update.png)
