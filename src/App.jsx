@@ -6,6 +6,7 @@ import Login from './components/Login'
 import Users from './components/Users';
 import Orders from './components/Orders';
 import Products from './components/Products';
+import Profile from './components/Profile';
 
 function App() {
   /*const [count, setCount] = useState(0)*/
@@ -16,6 +17,7 @@ function App() {
       <Route path="/gh-react-vite/users" element={<Users />} />
       <Route path="/gh-react-vite/orders" element={<Orders />} />
       <Route path="/gh-react-vite/products" element={<Products />} />
+      <Route path="/gh-react-vite/profile" element={<Profile />} />
     </Routes>
 
   )
