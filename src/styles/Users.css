@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+.users-main { 
+    background-image: url(../assets/bg-tree-horizontal.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+.users-main .users-body {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    margin-top: 15vh;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.users-main .users-body .users-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.users-main .users-body .users-container .create-user-btn {
+    height: 7vh;
+    width: 17vw;
+    background-color: #800020;
+    color: white;
+    text-transform: uppercase;
+}
+
+.users-table {
+    margin-top: 5vh;
+    width: 70%;
+    border: solid 3px #9B948E;
+    border-collapse: collapse;
+    align-self: center;
+    color: white;
+}
+
+.users-table thead {
+    text-align: center;
+    height: 8vh;
+    background-color: #800020;
+    color: white;
+    font-family: 'Montserrat Medium';
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+.users-table thead tr th {
+    text-align: center;
+    border: 3px solid #9B948E;
+}
+
+.users-table tbody tr {
+    border: none;
+    border-bottom: solid;
+    border-bottom-style: groove;
+}
+
+.users-table tbody tr:nth-child(even){
+    background-color: #B76E79;
+}
+
+.users-table tbody tr:nth-child(odd){
+    background-color: #B76E79;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.users-table tbody tr td {
+    height: 7vh;
+    border: none;
+    border-bottom: solid;
+    border-bottom-style: groove;
+    text-align: center;
+    border: 3px solid #9B948E;
+}
+
+
+
+.update-user-btn, 
+.delete-user-btn {
+    background-color: transparent;
+    border: none;
+}
+
+
+.update-user-btn img {
+    height: 3vh;
+}
+
+.delete-user-btn img {
+    height: 3vh;
+} 

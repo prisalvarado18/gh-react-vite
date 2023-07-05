@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/ModalDelivered.css";
+import "../../styles/ModalDelivered.css";
 
-function ModalCancelled({ setOpenModal, handleUpdate }) {
+function ModalDelivered({ setOpenModal, handleUpdate }) {
     return (
         <div className="modal-background">
             <div className="modal-container">
@@ -16,7 +16,7 @@ function ModalCancelled({ setOpenModal, handleUpdate }) {
                     <h1>CARA</h1>
                 </div>
                 <div className="body">
-                    <p>Do you want to update this order as cancelled?</p>
+                    <p>Do you want to update this order as delivered?</p>
                 </div>
                 <div className="footer">
                     <button onClick={handleUpdate}>Yes</button>
@@ -34,4 +34,4 @@ function ModalCancelled({ setOpenModal, handleUpdate }) {
     );
 }
 
-export default ModalCancelled;
+export default ModalDelivered;
